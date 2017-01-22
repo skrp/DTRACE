@@ -2,6 +2,13 @@
 # DTRACE & zdb 
 #      ---meet 
 # ZFS & FreeBSD
-
 zdb commands of importance
 dtrace reports for early disaster detection
+
+1 - pass config verify
+2 - zpool stats
+3 - zfs stats
+4 - dataset tool
+5 - list tools
+
+
