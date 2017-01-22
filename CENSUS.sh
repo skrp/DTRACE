@@ -4,6 +4,7 @@
 #                 ---cronjob
 pool=${1%/}
 work_dir=${2%/}
+# CONFIG ###################
 d=$( date +%m%d%y );
 zdb -C > "$work_dir"/$d;
 new_sha=%( sha256 "$work_dir"/$d );
@@ -12,3 +13,7 @@ if ($new_sha != $old_sha)
 then
   diff_by_line ""$work_dir"/$d "work_dir"/lastest;
 fi
+# ZPOOL ####################
+# ZFS ######################
+# NFS ######################
+# HOST #####################
