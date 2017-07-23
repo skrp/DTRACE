@@ -1,7 +1,24 @@
-##############
-# DTRACE & zdb 
-#      ---meet 
-# ZFS & FreeBSD
+##################################
+# DTRACE - dtrace & zdb interface
+
+# MAP ############################
+ZFS & FreeBSD
+        vv
+    perl_probe_object_framework 
+        vv
+    API:
+      foreach (@obj_req)
+        push @RES probe($_);
+        vv
+    ALG:
+      dresult = analyze(@RES);
+
+
+
+
+
+
+
 zdb commands of importance
 dtrace reports for early disaster detection
 # ZDB ANALYSIS #######
