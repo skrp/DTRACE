@@ -13,12 +13,8 @@ ZFS & FreeBSD
     ALG:
       dresult = analyze(@RES);
 
-
-
-
-
-
-
+##################################
+# OLD ############################
 zdb commands of importance
 dtrace reports for early disaster detection
 # ZDB ANALYSIS #######
