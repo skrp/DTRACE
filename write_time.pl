@@ -1,15 +1,12 @@
-#!/usr/local/bin/perl
-my $dtrace = <<END;
-/sbin/dtrace -s '
-  syscall::write:entry
-  /pid == $1/
-  {
-    nsec = timestamp;
-  }
-  syscall::write:return
-  /pid == $1 && nsec != 0/
-  {
-    printf("%d", timestamp - nsec);
-  }
-'
-END
+#!/sbin/dtrace
+syscall::write:entry
+/pid == $1/
+{
+  nsec = timestamp;
+}
+syscall::write:return
+/pid == $1 && nsec != 0/
+{
+  printf("%d", timestamp - nsec);
+}
+
