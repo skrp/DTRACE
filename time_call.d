@@ -1,4 +1,4 @@
-#!/sbin/dtrace
+#!/sbin/dtrace -s
 syscall:::$2
 /pid == $1/
 callout_execute:::callout_start
