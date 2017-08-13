@@ -1,4 +1,4 @@
-#!/sbin/dtrace
+#!/sbin/dtrace -s
 syscall:::entry
 /pid == $1/
 {
