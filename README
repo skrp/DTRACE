@@ -25,4 +25,15 @@ dtrace reports for early disaster detection
 5 - list tools
 # DTRACE TOOLS #######
 
-
+https://metacpan.org/source/XSAWYERX/perl-5.26.0/INSTALL#L1002
+=head2 DTrace support
+ 
+On platforms where DTrace is available, it may be enabled by
+using the -Dusedtrace option to Configure. DTrace probes are available
+for subroutine entry (sub-entry) and subroutine exit (sub-exit). Here's a
+simple D script that uses them:
+ 
+  perl$target:::sub-entry, perl$target:::sub-return {
+    printf("%s %s (%s:%d)\n", probename == "sub-entry" ? "->" : "<-",
+              copyinstr(arg0), copyinstr(arg1), arg2);
+  }
