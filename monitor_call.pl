@@ -1,4 +1,7 @@
 #!/usr/local/bin/perl
+##################################
+# MONITOR - syscall over many pids
+# requires fd_tcall.d 
 my ($pid_file, $sec) = @ARGV;
 die "no pid_file" unless defined $pid_file;
 die "no $sec" unless defined $pid_file;
