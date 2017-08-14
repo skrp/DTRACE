@@ -2,13 +2,13 @@
 #############################
 # CHRONIC - 420 timing checks
 my ($target, $call, $log) = @ARGV;
-my $x = $$;
 open(my $Tfh, '<', $target)
 my @targ = readline $Tfh; 
 chomp @targ; close $Tfh;
 foreach (@targ)
 { # ITER OVER CERTAIN PROCS #
   my $pid = $_;
+  my $x = $$;
   open(my $Lfh, '>>', $log);
   $SIG{HUP} = \&SUICIDE;
   die unless fork();
