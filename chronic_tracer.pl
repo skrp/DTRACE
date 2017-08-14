@@ -1,16 +1,19 @@
 #!/usr/local/bin/perl
+#############################
+# CHRONIC - 420 timing checks
 my ($target, $call, $log) = @ARGV;
 my $x = $$;
 open(my $Tfh, '<', $target)
 my @targ = readline $Tfh; 
 chomp @targ; close $Tfh;
 foreach (@targ)
-{
+{ # ITER OVER CERTAIN PROCS #
   my $pid = $_;
   open(my $Lfh, '>>', $log);
   $SIG{HUP} = \&SUICIDE;
   die unless fork();
   if ($x != $$)
+# RUN DTRACE FOR 1HR ########
   {
     sleep 3600;
     kill("HUP", $x); # sent CTL-c to dtrace
