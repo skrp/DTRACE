@@ -13,6 +13,7 @@ foreach (@pids)
 	print "$_ : "; 
 	my $avg = `dtrace -s tcall.d $call $_ $sec`; 
 	$avg =~ s/\n//g;
+# FIX REGEX #####################
 	$avg =~ s/.*perl//;
 	$avg =~ s/[\s\t]*//;
 	print "$avg\n";
